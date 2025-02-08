@@ -16,12 +16,11 @@ namespace ChatAppClient
                 byte[] messageData = Encoding.UTF8.GetBytes(messageToSend);
 
                 stream.Write(messageData, 0, messageData.Length);
-                Console.WriteLine("Sent to server: " + messageToSend);
 
                 byte[] responseData = new byte[256];
                 int bytesRead = stream.Read(responseData, 0, responseData.Length);
                 string serverResponse = Encoding.UTF8.GetString(responseData, 0, bytesRead);
-                Console.WriteLine("Received from server: " + serverResponse);
+                Console.WriteLine("Received");
             }
 
             client.Close();
